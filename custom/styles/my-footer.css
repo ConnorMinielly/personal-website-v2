@@ -1,0 +1,21 @@
+my-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-text {
+  color: snow;
+  font-size: 0.7em;
+  padding-bottom: 1rem;
+}
+
+.copy-mark {
+  color: palevioletred;
+}

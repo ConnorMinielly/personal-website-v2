@@ -1,8 +1,28 @@
+body {
+  margin: 0;
+}
+
 .background {
-    background-color: #101010;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 0em 2em;
+  color: snow;
+  background-color: #101010;
+  font-family: "Libre Baskerville", serif;
 }
 
 .title {
-    color: palevioletred;
+  color: palevioletred;
 }
 
+a,
+a:visited {
+  color: snow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: palevioletred;
+}

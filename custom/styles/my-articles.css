@@ -1,0 +1,52 @@
+my-articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.card {
+  display: flex;
+  border: 1px palevioletred solid;
+}
+
+.card:hover {
+  border: 1px snow solid;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 3em;
+  gap: 1em;
+}
+
+.card-icon {
+  height: 2.5rem;
+}
+
+.card-title {
+  color: snow;
+  text-decoration: none;
+}
+
+.card-description {
+  color: snow;
+  font-family: sans;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-link {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 40em) {
+  my-articles {
+    display: flex;
+    flex-direction: column;
+  }
+}
