@@ -33,7 +33,7 @@ my-articles {
 
 .card-description {
   color: snow;
-  font-family: sans;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .card-image {

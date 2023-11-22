@@ -10,11 +10,12 @@ body {
   padding: 0em 2em;
   color: snow;
   background-color: #101010;
-  font-family: "Libre Baskerville", serif;
+  font-family: "IBM Plex Serif", serif;
 }
 
 .title {
   color: palevioletred;
+  font-weight: 500;
 }
 
 a,
