@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "elements/": "../elements/",
+          "library": "../library/index.js"
+        }
+      }
+    </script>
+    <link rel="icon" href="../images/cm-site-icon.svg" />
+    <script async type="module" src="../library/auto-loader.js"></script>
+
+    <link rel="preload" href="../styles/core.css" as="style" />
+    <link rel="stylesheet" href="../styles/core.css" />
+    <link rel="preload" href="../styles/blog.css" as="style" />
+    <link rel="stylesheet" href="../styles/blog.css" />
+  </head>
+
+  <body class="background">
+    <auto-loader
+      elements-directory="../elements"
+      styles-directory="../styles"
+    ></auto-loader>
+    <my-header home-path="../"></my-header>
+    <h2 class="title">Articles</h2>
+    <my-articles></my-articles>
+    <a class="back-link" href="../index.html">🠄 Home</a>
+    <my-footer></my-footer>
+  </body>
+</html>

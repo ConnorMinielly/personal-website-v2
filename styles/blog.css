@@ -1,0 +1,23 @@
+.back-link {
+  display: inline-block;
+  font-size: 1.75em;
+  padding-top: 1em;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  font-family: "IBM Plex Sans", sans-serif;
+  padding: 0rem 18%;
+}
+
+iframe {
+  align-self: center;
+}
+
+hr {
+  width: 75%;
+  color: palevioletred;
+  border-color: palevioletred;
+  margin: 0.5em 0em 1em 0em;
+}

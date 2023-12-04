@@ -1,4 +1,4 @@
-import { html } from "../utils/template-tag.js";
+import { html, createElement } from "library";
 import "./my-cube.js";
 
 const footerTemplate = html`
@@ -10,12 +10,6 @@ const footerTemplate = html`
   </footer>
 `;
 
-class Footer extends HTMLElement {
-  constructor() {
-    super();
-    const footerClone = footerTemplate.cloneNode(true);
-    this.appendChild(footerClone);
-  }
-}
+const Footer = createElement(footerTemplate);
 
 customElements.define("my-footer", Footer);

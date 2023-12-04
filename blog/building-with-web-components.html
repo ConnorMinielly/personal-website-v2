@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to build witth web components?</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "elements/": "../elements/",
+          "library": "../library/index.js"
+        }
+      }
+    </script>
+    <link rel="icon" href="../images/cm-site-icon.svg" />
+    <script async type="module" src="../library/auto-loader.js"></script>
+
+    <link rel="preload" href="../styles/core.css" as="style" />
+    <link rel="stylesheet" href="../styles/core.css" />
+    <link rel="preload" href="../styles/blog.css" as="style" />
+    <link rel="stylesheet" href="../styles/blog.css" />
+
+    <!-- <link rel="stylesheet" href="../styles/prism-one-dark.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/prismjs@1.29.0/plugins/treeview/prism-treeview.min.css"
+    /> -->
+  </head>
+
+  <body class="background">
+    <auto-loader
+      elements-directory="../elements"
+      styles-directory="../styles"
+    ></auto-loader>
+    <my-header home-path="../"></my-header>
+    <hr />
+    <article>
+      <h2 class="title">How to build with web components?</h2>
+      <h3>This article is under construction 🏗️</h3>
+      <p>Please check back soon, I'm in the process of revamping my website!</p>
+      <!-- <pre>
+<code class="language-js">export default [
+  {
+    index: 0,
+    title: "Building Basic Websites With Web Componenets",
+    icons: [
+      { alt: "Tools", path: "../images/tools-icon.svg" },
+      { alt: "Website", path: "../images/website-icon.svg" },
+    ],
+    description:
+      "Using pure web technologies to build websites without custom servers or frameworks.",
+    link: "building-with-web-components.html",
+  },
+];</code>
+</pre>
+
+      <pre>
+<code class="language-treeview">
+root/
+├── index.html
+├── elements/
+│   ├── my-footer.js
+│   └── my-header.js
+├── images/
+│   └── icon.svg
+├── library/
+│   ├── example-lib.js
+│   └── index.js
+└── ../styles/
+    └── core.css</code>
+      </pre> -->
+    </article>
+    <a class="back-link" href="../blog/">🠄 Articles</a>
+
+    <my-footer></my-footer>
+
+    <script src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.29.0/plugins/treeview/prism-treeview.min.js"></script>
+  </body>
+</html>

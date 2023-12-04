@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Fundamentals For Programmers Like Me And You</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "elements/": "../elements/",
+          "library": "../library/index.js"
+        }
+      }
+    </script>
+    <link rel="icon" href="../images/cm-site-icon.svg" />
+    <script async type="module" src="../library/auto-loader.js"></script>
+
+    <link rel="preload" href="../styles/core.css" as="style" />
+    <link rel="stylesheet" href="../styles/core.css" />
+    <link rel="preload" href="../styles/blog.css" as="style" />
+    <link rel="stylesheet" href="../styles/blog.css" />
+  </head>
+
+  <body class="background">
+    <auto-loader
+      elements-directory="../elements"
+      styles-directory="../styles"
+    ></auto-loader>
+    <my-header home-path="../"></my-header>
+    <hr />
+    <article>
+      <h2 class="title">
+        Animation Fundamentals For Programmers Like Me And You
+      </h2>
+      <p style="padding-bottom: 2rem">
+        I did this talk a couple years back as an opportunity to chat about
+        something I have a lot of passion for: animation! While not every aspect
+        of traditional animation translates to the web, I think understanding
+        the concepts that animators have used for the past 70 years to create
+        charming and appealing motion art is really critical. So, that said,
+        enjoy the talk! And sorry for the recording quality, we were trying a
+        new venue that night and the AV setup was not as good as we were used
+        to.
+      </p>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Xd2CNn0Xw-o?si=bwI6DkHqQzb-lKpe"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </article>
+    <a class="back-link" href="../blog/">🠄 Articles</a>
+
+    <my-footer></my-footer>
+  </body>
+</html>

@@ -4,36 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connor Minielly</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "elements/": "./elements/",
+          "library": "./library/index.js"
+        }
+      }
+    </script>
+    <link rel="icon" href="./images/cm-site-icon.svg" />
+    <script async type="module" src="library/auto-loader.js"></script>
 
-    <link rel="preload" href="core.css" as="style" />
-    <link rel="stylesheet" href="core.css" />
-    <link rel="preload" href="home.css" as="style" />
-    <link rel="stylesheet" href="home.css" />
-
-    <!-- my-footer custom element -->
-    <script type="module" src="./custom/elements/my-footer.js"></script>
-    <link rel="preload" href="./custom/styles/my-footer.css" as="style" />
-    <link rel="stylesheet" href="./custom/styles/my-footer.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Serif:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="styles/core.css" as="style" />
+    <link rel="stylesheet" href="styles/core.css" />
+    <link rel="preload" href="styles/home.css" as="style" />
+    <link rel="stylesheet" href="styles/home.css" />
   </head>
+
   <body class="background">
-    <h1 class="title">Connor Minielly</h1>
+    <auto-loader
+      elements-directory="elements"
+      styles-directory="styles"
+    ></auto-loader>
+    <my-header home-path="/"></my-header>
     <nav class="nav-links">
-      <a href="/articles/index.html"> articles 🠆 </a>
+      <a href="/blog/index.html"> blog 🠆 </a>
       <hr />
       <a href="https://www.youtube.com/watch?v=Xd2CNn0Xw-o">
-        animation fundamentals talk 🠆
+        animation fundamentals talk (2019) 🠆
       </a>
       <a href="https://github.com/ConnorMinielly"> github 🠆 </a>
       <a href="https://www.linkedin.com/in/connor-minielly/"> linkedIn 🠆 </a>
     </nav>
-
     <my-footer></my-footer>
   </body>
 </html>

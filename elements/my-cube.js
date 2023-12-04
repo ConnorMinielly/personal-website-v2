@@ -1,4 +1,4 @@
-import { html } from "../utils/template-tag.js";
+import { html, createElement } from "library";
 
 const cubeTemplate = html`
   <style>
@@ -9,7 +9,7 @@ const cubeTemplate = html`
       position: relative;
       transform-style: preserve-3d;
       transform: translateZ(-25px) rotateX(45deg) rotateY(-45deg);
-      animation: rotate 4s linear normal infinite;
+      animation: rotate 12s linear normal infinite;
 
       .cube-panel {
         position: absolute;
@@ -45,10 +45,10 @@ const cubeTemplate = html`
 
     @keyframes rotate {
       from {
-        transform: rotateX(40deg) rotateY(-45deg);
+        transform: rotateX(35deg) rotateY(0deg);
       }
       to {
-        transform: rotateX(40deg) rotateY(45deg);
+        transform: rotateX(35deg) rotateY(360deg);
       }
     }
 
@@ -68,12 +68,6 @@ const cubeTemplate = html`
   </div>
 `;
 
-class Cube extends HTMLElement {
-  constructor() {
-    super();
-    const cubeClone = cubeTemplate.cloneNode(true);
-    this.appendChild(cubeClone);
-  }
-}
+const Cube = createElement(cubeTemplate);
 
 customElements.define("my-cube", Cube);
