@@ -13,6 +13,7 @@ article {
 
 iframe {
   align-self: center;
+  max-width: 100%;
 }
 
 hr {
@@ -20,4 +21,14 @@ hr {
   color: palevioletred;
   border-color: palevioletred;
   margin: 0.5em 0em 1em 0em;
+}
+
+@media only screen and (max-width: 40em) {
+  article {
+    padding: 0rem 0.75rem;
+  }
+
+  hr {
+    width: 100%;
+  }
 }
