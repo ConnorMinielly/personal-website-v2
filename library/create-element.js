@@ -1,4 +1,4 @@
-export const createElement = (template, callbacks) => {
+export const createCustomElement = (template, callbacks, options) => {
   return class Element extends HTMLElement {
     constructor() {
       super();

@@ -1,4 +1,4 @@
-import { html, createElement } from "library";
+import { html, createCustomElement } from "library";
 
 const cubeTemplate = html`
   <style>
@@ -68,6 +68,6 @@ const cubeTemplate = html`
   </div>
 `;
 
-const Cube = createElement(cubeTemplate);
+const Cube = createCustomElement(cubeTemplate);
 
 customElements.define("my-cube", Cube);

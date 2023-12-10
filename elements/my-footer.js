@@ -1,4 +1,4 @@
-import { html, createElement } from "library";
+import { html, createCustomElement } from "library";
 import "./my-cube.js";
 
 const footerTemplate = html`
@@ -10,6 +10,6 @@ const footerTemplate = html`
   </footer>
 `;
 
-const Footer = createElement(footerTemplate);
+const Footer = createCustomElement(footerTemplate);
 
 customElements.define("my-footer", Footer);

@@ -1,3 +1,5 @@
+const loadWhenIdle = window.requestIdleCallback || window.requestAnimationFrame;
+
 export class AutoLoader extends HTMLElement {
   get elementsDirectory() {
     return this.hasAttribute("elements-directory")
@@ -30,20 +32,22 @@ export class AutoLoader extends HTMLElement {
         localName.includes("my-") && !customElements.get(localName)
     );
     customNodes.forEach((element) => {
-      this.loadCustomElement(element);
-      if (!this.hasAttribute("no-external-css"))
-        this.loadCustomElementCss(element);
+      loadWhenIdle(() => {
+        this.loadCustomElement(element);
+      });
     });
   }
 
-  loadCustomElement({ localName }) {
+  loadCustomElement(element) {
+    const { localName } = element;
     const customElementScript = document.createElement("script");
     customElementScript.type = "module";
     customElementScript.src = `${this.elementsDirectory}/${localName}.js`;
     document.head.appendChild(customElementScript);
+    if (!this.hasAttribute("no-external-css")) this.loadCss(element);
   }
 
-  loadCustomElementCss({ localName }) {
+  loadCss({ localName }) {
     const cssPreloadLink = document.createElement("link");
     cssPreloadLink.rel = "preload";
     cssPreloadLink.as = "style";

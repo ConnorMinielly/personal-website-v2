@@ -1,12 +1,15 @@
-import { html, createElement } from "library";
+import { html, createCustomElement } from "library";
 
 const articleDirectory = [
   {
     index: 0,
     title: "Animation Fundamentals For Programmers Like Me And You",
     icons: [
-      { alt: "Tools", path: "../images/tools-icon.svg" },
-      { alt: "Website", path: "../images/website-icon.svg" },
+      {
+        alt: "A Symbol Representing Animation",
+        path: "../images/animation.svg",
+      },
+      { alt: "Person Running", path: "../images/running.svg" },
     ],
     description: "A talk I did at the Polyhack tech meetup in toronto in 2019.",
     link: "animation-fundamentals-talk.html",
@@ -15,8 +18,9 @@ const articleDirectory = [
     index: 1,
     title: "Finding The Fun: Building With Sites With Web Components",
     icons: [
-      { alt: "Tools", path: "../images/tools-icon.svg" },
-      { alt: "Website", path: "../images/website-icon.svg" },
+      { alt: "Crossed Tools", path: "../images/tools.svg" },
+      { alt: "A Person Having Fun", path: "../images/play.svg" },
+      { alt: "A Representation of a Website", path: "../images/webview.svg" },
     ],
     description:
       "Using pure web technologies to rediscover the fun of building websites without custom servers or frameworks.",
@@ -34,7 +38,7 @@ const cardTemplate = html`
   </section>
 `;
 
-const Articles = createElement(null, {
+const Articles = createCustomElement(null, {
   connected: (elem) => {
     if (!elem.hasChildNodes()) {
       articleDirectory.reverse().forEach((article) => {

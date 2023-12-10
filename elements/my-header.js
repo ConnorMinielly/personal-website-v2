@@ -1,4 +1,4 @@
-import { html, createElement } from "library";
+import { html, createCustomElement } from "library";
 
 const headerTemplate = html`<header>
   <a id="header-home-link">
@@ -6,7 +6,7 @@ const headerTemplate = html`<header>
   </a>
 </header>`;
 
-const Header = createElement(headerTemplate, {
+const Header = createCustomElement(headerTemplate, {
   connected: (elem) => {
     const homeLink = elem.querySelector("#header-home-link");
     homeLink.href = elem.getAttribute("home-path");
