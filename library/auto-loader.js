@@ -44,7 +44,7 @@ export class AutoLoader extends HTMLElement {
     customElementScript.type = "module";
     customElementScript.src = `${this.elementsDirectory}/${localName}.js`;
     document.head.appendChild(customElementScript);
-    if (!this.hasAttribute("no-external-css")) this.loadCss(element);
+    if (!element.hasAttribute("no-external-css")) this.loadCss(element);
   }
 
   loadCss({ localName }) {

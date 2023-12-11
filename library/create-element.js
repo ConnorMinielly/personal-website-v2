@@ -1,15 +1,7 @@
-export const createCustomElement = (template, callbacks, options) => {
-  return class Element extends HTMLElement {
-    constructor() {
-      super();
-      if (template) {
-        const clone = template.cloneNode(true);
-        this.appendChild(clone);
-      }
-    }
-
-    connectedCallback() {
-      if (callbacks?.connected) callbacks.connected(this);
-    }
-  };
+export const createElement = (type, attributes) => {
+  const element = document.createElement(type);
+  Object.entries(attributes).forEach(([key, value]) => {
+    element.setAttribute(key, value);
+  });
+  return element;
 };
