@@ -1,4 +1,4 @@
-import { html, createCustomElement } from "library";
+import { html, createCustomElement, createElement } from "library";
 
 const articleDirectory = [
   {
@@ -47,13 +47,14 @@ const Articles = createCustomElement(null, {
         cardClone.querySelector(".card-description").innerHTML =
           article.description;
         article.icons.forEach((icon) => {
-          const iconImgTag = document.createElement("img");
-          iconImgTag.src = icon.path;
-          iconImgTag.alt = icon.alt;
-          iconImgTag.height = 50;
-          iconImgTag.width = 50;
-          iconImgTag.className = "card-icon";
-          iconImgTag.loading = "lazy";
+          const iconImgTag = createElement("img", {
+            src: icon.path,
+            alt: icon.alt,
+            height: 50,
+            width: 50,
+            className: "card-icon",
+            loading: "lazy",
+          });
           cardClone.querySelector(".card-icons").appendChild(iconImgTag);
         });
         cardClone.querySelector(".card-link").href = `./${article.link}`;

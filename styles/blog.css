@@ -16,7 +16,7 @@ iframe {
   max-width: 100%;
 }
 
-hr {
+.article-hr {
   width: 75%;
   color: palevioletred;
   border-color: palevioletred;
@@ -28,7 +28,7 @@ hr {
     padding: 0rem 0.75rem;
   }
 
-  hr {
+  .article-hr {
     width: 100%;
   }
 }

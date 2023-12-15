@@ -1,3 +1,9 @@
+@import url("./blog.css");
+@import url("./home.css");
+@import url("./my-footer.css");
+@import url("./my-header.css");
+@import url("./my-articles.css");
+
 body {
   margin: 0;
 }

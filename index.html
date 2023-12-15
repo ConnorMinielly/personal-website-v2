@@ -7,37 +7,25 @@
     <script type="importmap">
       {
         "imports": {
-          "elements/": "./elements/",
           "library": "./library/index.js"
         }
       }
     </script>
+    <script type="module" src="/library/auto-loader.js"></script>
+
     <link rel="icon" href="./images/cm-site-icon.svg" />
     <link rel="apple-touch-icon" href="./images/cm-site-icon.png" />
-    <script async type="module" src="library/auto-loader.js"></script>
 
     <link rel="preload" href="styles/core.css" as="style" />
     <link rel="stylesheet" href="styles/core.css" />
-    <link rel="preload" href="styles/home.css" as="style" />
-    <link rel="stylesheet" href="styles/home.css" />
   </head>
 
   <body class="background">
-    <auto-loader
-      elements-directory="elements"
-      styles-directory="styles"
-    ></auto-loader>
-    <my-meta-tags
-      no-external-css
-      description="Connor Minielly's home page."
-    ></my-meta-tags>
-    <my-header home-path="/"></my-header>
+    <my-meta-tags description="Connor Minielly's home page."></my-meta-tags>
+    <my-header></my-header>
     <nav class="nav-links">
       <a href="/blog/index.html"> blog → </a>
-      <hr />
-      <a href="https://www.youtube.com/watch?v=Xd2CNn0Xw-o">
-        animation fundamentals talk (2019) →
-      </a>
+      <hr class="home-hr" />
       <a href="https://github.com/ConnorMinielly"> github → </a>
       <a href="https://www.linkedin.com/in/connor-minielly/"> linkedIn → </a>
     </nav>

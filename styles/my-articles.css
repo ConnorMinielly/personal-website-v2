@@ -2,6 +2,7 @@ my-articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
+  min-height: 250px;
 }
 
 .card {
@@ -54,5 +55,6 @@ my-articles {
   my-articles {
     display: flex;
     flex-direction: column;
+    min-height: 450px;
   }
 }

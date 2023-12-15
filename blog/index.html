@@ -7,34 +7,26 @@
     <script type="importmap">
       {
         "imports": {
-          "elements/": "../elements/",
           "library": "../library/index.js"
         }
       }
     </script>
+    <script async type="module" src="/library/auto-loader.js"></script>
+
     <link rel="icon" href="../images/cm-site-icon.svg" />
     <link rel="apple-touch-icon" href="../images/cm-site-icon.png" />
 
-    <script async type="module" src="../library/auto-loader.js"></script>
-
-    <link rel="preload" href="../styles/core.css" as="style" />
-    <link rel="stylesheet" href="../styles/core.css" />
-    <link rel="preload" href="../styles/blog.css" as="style" />
-    <link rel="stylesheet" href="../styles/blog.css" />
+    <link rel="preload" href="/styles/core.css" as="style" />
+    <link rel="stylesheet" href="/styles/core.css" />
   </head>
 
   <body class="background">
-    <auto-loader
-      elements-directory="../elements"
-      styles-directory="../styles"
-    ></auto-loader>
     <my-meta-tags
-      no-external-css
       description="List of articles on my blog site."
     ></my-meta-tags>
-    <my-header home-path="../"></my-header>
+    <my-header></my-header>
     <h2 class="title">Articles</h2>
-    <my-articles></my-articles>
+    <my-articles style="min-height: 250px"></my-articles>
     <a class="back-link" href="../index.html">← Home</a>
     <my-footer></my-footer>
   </body>

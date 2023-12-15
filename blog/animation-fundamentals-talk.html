@@ -7,48 +7,26 @@
     <script type="importmap">
       {
         "imports": {
-          "elements/": "../elements/",
-          "library": "../library/index.js"
+          "library": "/library/index.js"
         }
       }
     </script>
+    <script async type="module" src="/library/auto-loader.js"></script>
+
     <link rel="icon" href="../images/cm-site-icon.svg" />
     <link rel="apple-touch-icon" href="../images/cm-site-icon.png" />
 
-    <script async type="module" src="../library/auto-loader.js"></script>
-
     <link rel="preload" href="../styles/core.css" as="style" />
     <link rel="stylesheet" href="../styles/core.css" />
-    <link rel="preload" href="../styles/blog.css" as="style" />
-    <link rel="stylesheet" href="../styles/blog.css" />
-
-    <meta
-      property="og:image"
-      content="https://connor-minielly.com/images/og-image.png"
-    />
-    <meta
-      property="og:title"
-      content="Animation Fundamentals For Programmers Like Me And You"
-    />
-    <meta
-      property="og:url"
-      content="https://connor-minielly.com/blog/animation-fundamentals-talk.html"
-    />
-    <meta property="og:type" content="article" />
   </head>
 
   <body class="background">
-    <auto-loader
-      elements-directory="../elements"
-      styles-directory="../styles"
-    ></auto-loader>
     <my-meta-tags
-      no-external-css
       description="A talk on traditional animation fundamentals and how they can be translated to web development."
       og-image="/images/og-image.png"
     ></my-meta-tags>
-    <my-header home-path="../"></my-header>
-    <hr />
+    <my-header></my-header>
+    <hr class="article-hr" />
     <article>
       <h2 class="title">
         Animation Fundamentals For Programmers Like Me And You
