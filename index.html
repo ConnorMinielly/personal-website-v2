@@ -11,7 +11,17 @@
         }
       }
     </script>
-    <script type="module" src="/library/auto-loader.js"></script>
+    <script type="speculationrules">
+      {
+        "prerender": [
+          {
+            "source": "list",
+            "urls": ["/blog/index.html"]
+          }
+        ]
+      }
+    </script>
+    <script async type="module" src="/library/auto-loader.js"></script>
 
     <link rel="icon" href="./images/cm-site-icon.svg" />
     <link rel="apple-touch-icon" href="./images/cm-site-icon.png" />

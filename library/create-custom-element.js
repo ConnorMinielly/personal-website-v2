@@ -8,8 +8,8 @@ export const createCustomElement = (template, callbacks, options) => {
       }
     }
 
-    connectedCallback() {
-      if (callbacks?.connected) callbacks.connected(this);
+    async connectedCallback() {
+      if (callbacks?.connected) await callbacks.connected(this);
     }
   };
 };

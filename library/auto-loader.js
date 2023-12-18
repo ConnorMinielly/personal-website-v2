@@ -9,6 +9,7 @@ const connectCustomElements = async () => {
     ({ localName }) =>
       localName.includes("my-") && !customElements.get(localName)
   );
+
   customNodes.forEach((element) => {
     loadWhenIdle(() => {
       loadCustomElement(element);
@@ -21,6 +22,7 @@ const loadCustomElement = (element) => {
   const customElementScript = createElement("script", {
     type: "module",
     src: `/elements/${localName}.js`,
+    async: true,
   });
   document.head.appendChild(customElementScript);
 };

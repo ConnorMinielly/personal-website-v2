@@ -16,7 +16,7 @@ const articleDirectory = [
   },
   {
     index: 1,
-    title: "Finding The Fun: Building With Sites With Web Components",
+    title: "Finding The Fun: Building Websites With Web Components",
     icons: [
       { alt: "Crossed Tools", path: "../images/tools.svg" },
       { alt: "A Person Having Fun", path: "../images/play.svg" },
