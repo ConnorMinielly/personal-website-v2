@@ -41,25 +41,30 @@ const cardTemplate = html`
 const Articles = createCustomElement(null, {
   connected: (elem) => {
     if (!elem.hasChildNodes()) {
+      const listFragment = new DocumentFragment();
       articleDirectory.reverse().forEach((article) => {
         const cardClone = cardTemplate.cloneNode(true);
         cardClone.querySelector(".card-title").innerHTML = article.title;
         cardClone.querySelector(".card-description").innerHTML =
           article.description;
-        article.icons.forEach((icon) => {
-          const iconImgTag = createElement("img", {
-            src: icon.path,
-            alt: icon.alt,
-            height: 50,
-            width: 50,
-            className: "card-icon",
-            loading: "lazy",
-          });
-          cardClone.querySelector(".card-icons").appendChild(iconImgTag);
-        });
+        const iconsFragment = new DocumentFragment();
+        iconsFragment.append(
+          ...article.icons.map((icon) => {
+            return createElement("img", {
+              src: icon.path,
+              alt: icon.alt,
+              height: 50,
+              width: 50,
+              className: "card-icon",
+              loading: "lazy",
+            });
+          })
+        );
+        cardClone.querySelector(".card-icons").appendChild(iconsFragment);
         cardClone.querySelector(".card-link").href = `./${article.link}`;
-        elem.appendChild(cardClone);
+        listFragment.appendChild(cardClone);
       });
+      elem.appendChild(listFragment);
     }
   },
 });

@@ -2,29 +2,28 @@ import { createElement } from "library";
 const loadWhenIdle = window.requestIdleCallback || window.requestAnimationFrame;
 
 const connectCustomElements = async () => {
-  const nodes = Object.values(
+  const allNodes = Object.values(
     document.querySelector("body").querySelectorAll("*")
   );
-  const customNodes = nodes.filter(
+  const customNodes = allNodes.filter(
     ({ localName }) =>
       localName.includes("my-") && !customElements.get(localName)
   );
 
-  customNodes.forEach((element) => {
-    loadWhenIdle(() => {
-      loadCustomElement(element);
-    });
-  });
-};
+  const fragment = new DocumentFragment();
+  fragment.append(
+    ...customNodes.map(({ localName }) =>
+      createElement("script", {
+        type: "module",
+        src: `/elements/${localName}.js`,
+        async: true,
+      })
+    )
+  );
 
-const loadCustomElement = (element) => {
-  const { localName } = element;
-  const customElementScript = createElement("script", {
-    type: "module",
-    src: `/elements/${localName}.js`,
-    async: true,
+  loadWhenIdle(() => {
+    document.head.appendChild(fragment);
   });
-  document.head.appendChild(customElementScript);
 };
 
 connectCustomElements();
